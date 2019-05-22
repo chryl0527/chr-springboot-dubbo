@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 //@EnableConfigurationProperties({DruidProperties.class})
-//@MapperScan(basePackages = "com.dc.sb.dao")
 //@ComponentScan("com.sdsoon.demo.*")
-//@EnableDubboConfiguration
 @SpringBootApplication
 public class ConDubboApplication {
 
