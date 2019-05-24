@@ -2,12 +2,14 @@ package com.sdsoon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
 //@EnableConfigurationProperties({DruidProperties.class})
 //@ComponentScan("com.sdsoon.demo.*")
 @SpringBootApplication
-public class ConDubboApplication {
+public class ConDubboApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
 
@@ -20,6 +22,11 @@ public class ConDubboApplication {
 //        ConfigurableApplicationContext run = SpringApplication.run(ConDubboApplication.class, args);
 //        OrderService orderService = run.getBean(OrderService.class);
 //        orderService.queryOrder();
+    }
+
+    @Override//为了打包springboot项目
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(this.getClass());
     }
 
 }

@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.sdsoon</groupId>
-		<artifactId>chr-springboot-dubbo</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<groupId>com.sdsoon</groupId>
-	<artifactId>pro-dubbo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>pro-dubbo</name>
-	<description>服务端</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sdsoon</groupId>
+        <artifactId>chr-springboot-dubbo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>com.sdsoon</groupId>
+    <artifactId>pro-dubbo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>pro-dubbo</name>
+    <description>服务端</description>
+    <packaging>war</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.sdsoon</groupId>
+            <artifactId>common-dubbo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.sdsoon</groupId>
-			<artifactId>common-dubbo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+    <!--
+    <skipTests>true</skipTests>
+    <skip>true</skip>
+
+    使用maven.test.skip，不但跳过单元测试的运行，也跳过测试代码的编译。
+    mvn package -Dmaven.test.skip=true
+    -->
+    <!--使用 mvn package -DskipTests 跳过单元测试，但是会继续编译；
+    如果没时间修改单元测试的bug，或者单元测试编译错误。使用上面的，不要用这个
+
+
+    -->
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-surefire-plugin</artifactId>-->
+    <!--<configuration>-->
+    <!--<skipTests>true</skipTests>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+
+    <!--</build>-->
+
 
 </project>

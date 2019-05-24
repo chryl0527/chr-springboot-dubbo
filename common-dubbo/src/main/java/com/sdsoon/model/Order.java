@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created By Chr on 2019/3/9/0009.
  */
-public class Order  implements Serializable{
+public class Order implements Serializable {
 
     private static final long serialVersionUID = 4360131992417723940L;
     private Integer orderId;

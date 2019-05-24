@@ -44,7 +44,7 @@ public class OrderController {
     }
 
     @RequestMapping("/{topic}")
-    public Object bye(@PathVariable(value = "topic",required = false) String topic) {
+    public Object bye(@PathVariable(value = "topic", required = false) String topic) {
 
 
         if ("order".equals(topic)) {

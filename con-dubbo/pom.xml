@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.sdsoon</groupId>
-		<artifactId>chr-springboot-dubbo</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<groupId>com.sdsoon</groupId>
-	<artifactId>con-dubbo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>con-dubbo</name>
-	<description>Demo project for Spring Boot</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sdsoon</groupId>
+        <artifactId>chr-springboot-dubbo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>com.sdsoon</groupId>
+    <artifactId>con-dubbo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>con-dubbo</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>war</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.sdsoon</groupId>
+            <artifactId>common-dubbo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.sdsoon</groupId>
-			<artifactId>common-dubbo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+    </dependencies>
 
-	</dependencies>
+    <!--
+    为什么出现在web的pom文件中:因为启动类在web里面，所以把build标签以及里面内容放进了web的pom文件中
+    只有有controller:才有maven插件 -->
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
 
 </project>
