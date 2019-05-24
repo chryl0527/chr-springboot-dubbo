@@ -1,10 +1,12 @@
 package com.sdsoon.demo;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.fastjson.JSONObject;
 import com.sdsoon.model.City;
 import com.sdsoon.model.Order;
 import com.sdsoon.service.CityService;
 import com.sdsoon.service.OrderService;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,7 +39,29 @@ public class OrderController {
     @RequestMapping(value = "/city")
     public Object sayHei() {
 
-        List<City> orders = cityService.queryCity();
-        return orders;
+        List<City> cities = cityService.queryCity();
+        return cities;
+    }
+
+    @RequestMapping("/{topic}")
+    public Object bye(@PathVariable(value = "topic",required = false) String topic) {
+
+
+        if ("order".equals(topic)) {
+            List<Order> orders = orderService.queryOrder();
+            return orders;
+        } else if ("city".equals(topic)) {
+            List<City> cities = cityService.queryCity();
+            return cities;
+        } else {
+            List<Order> orders = orderService.queryOrder();
+            List<City> cities = cityService.queryCity();
+
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("orders", orders);
+            jsonObject.put("cities", cities);
+            return jsonObject;
+
+        }
     }
 }
