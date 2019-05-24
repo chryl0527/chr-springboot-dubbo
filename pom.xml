@@ -33,6 +33,7 @@
     <dependencies>
 
 
+        <!-- curator监控 -->
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
