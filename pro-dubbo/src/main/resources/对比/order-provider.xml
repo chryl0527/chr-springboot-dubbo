@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 1.先配置那个服务要发布 ，bean标签配置-->
+    <!-- 暂时没有这个包,注释起来,仅供对比 -->
+    <!--<bean id="orderService" class="com.lnsoft.OrderServiceImpl"></bean>-->
+
+    <!-- 2.配置服务的名字 -->
+    <dubbo:application name="orderServiceProvider"></dubbo:application>
+
+    <!-- 3.配置服务的地址 -->
+    <!-- backup前面的是leader主，后面的是follower从 -->
+    <!-- linux：有主从 -->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>
+    <!-- 本地localhost -->
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>-->
+    <!-- 130单独测试 -->
+    <!--<dubbo:registry address="zookeeper://192.168.92.130:2181"></dubbo:registry>-->
+    <!-- 129单独测试 -->
+    <!--<dubbo:registry address="zookeeper://192.168.92.129:2181"></dubbo:registry>-->
+    <!-- 128单独测试 -->
+    <!--<dubbo:registry address="zookeeper://192.168.92.128:2181"></dubbo:registry>-->
+
+
+    <!-- 4.配置服务端口 -->
+    <dubbo:protocol port="20881"></dubbo:protocol>
+
+    <!-- 5.对外暴露的接口:interface为暴露的接口，ref为关联的服务 -->
+    <!-- 暂时没有这个包,注释起来,仅供对比 -->
+    <!--<dubbo:service interface="com.lnsoft.service.OrderService" ref="orderService"></dubbo:service>-->
+
+</beans>

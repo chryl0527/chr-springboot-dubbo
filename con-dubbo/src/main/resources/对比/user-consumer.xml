@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <!-- 1.应用名字 -->
+    <dubbo:application name="userServiceConsumer"></dubbo:application>
+
+    <!-- 2.注册中心地址 -->
+    <!-- linux：有主从 -->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>-->
+    <!-- 130单独测试 -->
+    <!--<dubbo:registry address="zookeeper://192.168.92.130:2181"></dubbo:registry>-->
+    <!-- 129单独测试 -->
+    <!--<dubbo:registry address="zookeeper://192.168.92.129:2181"></dubbo:registry>-->
+    <!-- 128单独测试 -->
+    <!-- <dubbo:registry address="zookeeper://192.168.92.128:2181"></dubbo:registry>-->
+
+    <!-- 3.要访问的服务接口 -->
+    <!-- 暂时没有这个包,注释起来,仅供对比 -->
+    <!--<dubbo:reference id="orderService" interface="com.lnsoft.service.OrderService"></dubbo:reference>-->
+
+
+</beans>
